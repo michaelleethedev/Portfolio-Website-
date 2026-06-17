@@ -4,12 +4,31 @@ import './Navbar.css';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
+
+  const navItems = [
+    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'contact', label: 'Contact' }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
+      const scrollPosition = window.scrollY + 140;
       setScrolled(window.scrollY > 50);
+
+      const currentSection = ['hero', ...navItems.map((item) => item.id)].findLast((sectionId) => {
+        const section = document.getElementById(sectionId);
+        return section && section.offsetTop <= scrollPosition;
+      });
+
+      if (currentSection) {
+        setActiveSection(currentSection);
+      }
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -25,11 +44,15 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container navbar-container">
-        <a href="#hero" className="navbar-logo" onClick={(e) => {
+        <a href="#hero" className="navbar-brand" onClick={(e) => {
           e.preventDefault();
           scrollToSection('hero');
         }}>
-          Saleem
+          <span className="navbar-mark">ML</span>
+          <span className="navbar-identity">
+            <span className="navbar-name">Michael Lee</span>
+            <span className="navbar-role">Software Developer</span>
+          </span>
         </a>
 
         <button 
@@ -43,41 +66,41 @@ const Navbar = () => {
         </button>
 
         <ul className={`navbar-menu ${mobileMenuOpen ? 'navbar-menu-open' : ''}`}>
-          <li>
-            <a href="#about" onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('about');
-            }}>About</a>
-          </li>
-          <li>
-            <a href="#skills" onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('skills');
-            }}>Skills</a>
-          </li>
-          <li>
-            <a href="#projects" onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('projects');
-            }}>Projects</a>
-          </li>
-          <li>
-            <a href="#services" onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('services');
-            }}>Services</a>
-          </li>
-          <li>
-            <a href="#contact" onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('contact');
-            }}>Contact</a>
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                className={activeSection === item.id ? 'navbar-link-active' : ''}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.id);
+                }}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+          <li className="navbar-mobile-actions">
+            <a
+              href="https://github.com/michaelleethedev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar-button navbar-button-secondary"
+            >
+              GitHub
+            </a>
+            <a
+              href="mailto:michael.b.lee22@gmail.com"
+              className="navbar-button navbar-button-primary"
+            >
+              Email
+            </a>
           </li>
         </ul>
 
         <div className="navbar-actions">
           <a 
-            href="https://github.com/saleem" 
+            href="https://github.com/michaelleethedev" 
             target="_blank" 
             rel="noopener noreferrer"
             className="navbar-button navbar-button-secondary"
@@ -85,11 +108,16 @@ const Navbar = () => {
             GitHub
           </a>
           <a 
-            href="/resume.pdf" 
+            href="mailto:michael.b.lee22@gmail.com?subject=Resume%20Request" 
             className="navbar-button navbar-button-primary"
-            download
           >
             Resume
+          </a>
+          <a
+            href="mailto:michael.b.lee22@gmail.com"
+            className="navbar-button navbar-button-accent"
+          >
+            Email
           </a>
         </div>
       </div>

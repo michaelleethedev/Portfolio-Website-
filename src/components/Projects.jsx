@@ -3,83 +3,103 @@ import ProjectCard from './ProjectCard';
 import './Projects.css';
 
 const Projects = () => {
+  const chromeWebStoreUrl = 'https://chromewebstore.google.com/detail/seamless/phipkfflgldgfdmgenobpklmlnpekgph?hl=en';
+  const githubUrl = 'https://github.com/michaelleethedev';
+
   const projects = [
     {
-      icon: '🤖',
-      title: 'AI Sales Ops Assistant',
-      summary: 'Intelligent assistant that automates sales operations tasks and provides real-time insights for revenue teams.',
-      problem: 'Sales teams waste hours on manual data entry, lead qualification, and report generation. This tool uses AI to handle routine operations work, letting reps focus on closing deals.',
+      title: 'TraceForge AI',
+      subtitle: 'AI observability / agent monitoring dashboard',
+      status: 'Featured Project',
+      summary: 'A portfolio demo dashboard concept for monitoring AI agent activity, tool calls, latency, risk signals, traces, and policy events.',
+      positioning: 'Enterprise AI safety and observability platform',
+      privacy: 'Uses mock data only. No real AI logs, API keys, or private user data.',
       features: [
-        'Automated lead scoring and qualification using GPT-4',
-        'Natural language CRM data entry and updates',
-        'Intelligent email drafting for outreach campaigns',
-        'Real-time pipeline analytics and forecasting',
-        'Integration with Salesforce and HubSpot APIs'
+        'Agent activity timeline with trace-level context',
+        'Tool call, latency, and policy event monitoring',
+        'Risk signal review for AI workflow oversight',
+        'Product-style dashboard UI built with mock data'
       ],
-      tech: ['React', 'Node.js', 'OpenAI API', 'PostgreSQL', 'Express', 'REST APIs'],
-      github: 'https://github.com/saleem/ai-sales-ops',
-      demo: null
+      tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Mock Data'],
+      visual: {
+        label: 'Trace Monitor',
+        items: ['Agent Run', 'Tool Call', 'Policy Event', 'Risk Review']
+      },
+      actions: [
+        { label: 'Live Demo', disabled: true, primary: true },
+        { label: 'GitHub', href: githubUrl, external: true },
+        { label: 'Case Study', disabled: true }
+      ],
+      featured: true
     },
     {
-      icon: '💻',
-      title: 'IT Asset + Support Ticket Manager',
-      summary: 'Centralized platform for tracking IT assets, managing support requests, and monitoring equipment lifecycle across an organization.',
-      problem: 'IT departments struggle to track hardware inventory, manage support tickets, and plan equipment refreshes. This system consolidates asset management and helpdesk functions into one efficient workflow.',
+      title: 'Seamless',
+      subtitle: 'Chrome extension',
+      status: 'Published Chrome Extension',
+      summary: 'A Chrome extension for organizing, searching, favoriting, and reusing workflow templates directly in the browser.',
+      positioning: 'Browser productivity and workflow automation tool',
+      privacy: 'Stores templates locally. No real user data is collected in the demo.',
       features: [
-        'Complete asset lifecycle tracking with depreciation',
-        'Ticket routing and SLA monitoring',
-        'Equipment checkout/return workflow',
-        'Automated maintenance reminders',
-        'Custom reporting and analytics dashboard'
+        'Template organization with folders, search, and favorites',
+        'Reusable workflow snippets available directly in the browser',
+        'Fast local-template access for repeated writing tasks',
+        'Privacy-first local storage model'
       ],
-      tech: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Express', 'Chart.js'],
-      github: 'https://github.com/saleem/it-asset-manager',
-      demo: null
+      tech: ['TypeScript', 'Chrome Extension API', 'Tailwind CSS', 'Local Storage'],
+      visual: {
+        label: 'Template Library',
+        items: ['Search Templates', 'Favorite Reply', 'Insert Snippet', 'Local Storage']
+      },
+      actions: [
+        { label: 'Live Demo', href: chromeWebStoreUrl, primary: true, external: true },
+        { label: 'GitHub', href: 'https://github.com/michaelleethedev/seamless-extension', external: true },
+        { label: 'Case Study', disabled: true }
+      ]
     },
     {
-      icon: '📝',
-      title: 'Client Content Request Portal',
-      summary: 'Self-service portal that streamlines content requests, approvals, and delivery for marketing and creative teams.',
-      problem: 'Content requests arrive through email, Slack, and meetings, creating chaos for creative teams. This portal standardizes intake, tracks progress, and manages approvals in one place.',
+      title: 'SkillBridge AI',
+      subtitle: 'EdTech SaaS dashboard',
+      status: 'Product-Style Build',
+      summary: 'A tutoring dashboard concept for tracking student progress, identifying learning gaps, generating practice plans, and creating parent/admin summaries.',
+      positioning: 'AI-powered learning analytics platform',
+      privacy: 'Uses fictional student data only. No real student records or private education data.',
       features: [
-        'Structured request forms with file uploads',
-        'Multi-stage approval workflows',
-        'Real-time status tracking for clients',
-        'Automated notifications and reminders',
-        'Project timeline visualization and capacity planning'
+        'Student progress dashboard with fictional records',
+        'Learning gap review and skill mastery tracking',
+        'Practice plan and summary generation flows',
+        'Admin-friendly education analytics interface'
       ],
-      tech: ['React', 'Node.js', 'PostgreSQL', 'AWS S3', 'Tailwind CSS', 'Express'],
-      github: 'https://github.com/saleem/content-request-portal',
-      demo: null
-    },
-    {
-      icon: '📊',
-      title: 'Tutoring Progress Dashboard',
-      summary: 'Analytics platform that helps tutoring businesses track student progress, schedule sessions, and measure learning outcomes.',
-      problem: 'Tutoring centers need visibility into student performance trends and session effectiveness. This dashboard aggregates data from assessments and sessions to identify improvement areas and optimize teaching strategies.',
-      features: [
-        'Student performance tracking with visual trends',
-        'Session scheduling and attendance management',
-        'Automated progress reports for parents',
-        'Subject-specific analytics and insights',
-        'Tutor performance metrics and feedback system'
-      ],
-      tech: ['React', 'Python', 'Flask', 'PostgreSQL', 'Chart.js', 'Tailwind CSS'],
-      github: 'https://github.com/saleem/tutoring-dashboard',
-      demo: null
+      tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Mock Data'],
+      visual: {
+        label: 'Learning Insights',
+        items: ['Student Profile', 'Skill Gaps', 'Practice Plan', 'Parent Summary']
+      },
+      actions: [
+        { label: 'Live Demo', disabled: true, primary: true },
+        { label: 'GitHub', href: githubUrl, external: true },
+        { label: 'Case Study', disabled: true }
+      ]
     }
   ];
 
   return (
     <section id="projects" className="section projects">
       <div className="container">
-        <h2 className="section-title">Featured Projects</h2>
-        <p className="section-subtitle">
-          Real-world applications built to solve practical business problems
-        </p>
+        <div className="projects-header">
+          <span className="projects-kicker">Featured Projects</span>
+          <h2 className="section-title">Product-style software builds</h2>
+          <p className="section-subtitle">
+            Three focused portfolio demos showing AI observability, browser productivity, and education analytics through polished technical interfaces.
+          </p>
+        </div>
+
+        <div className="project-disclaimer">
+          Portfolio demos use mock or local data only. No API keys, private user records, student records, or production credentials are included.
+        </div>
+
         <div className="projects-grid">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </div>

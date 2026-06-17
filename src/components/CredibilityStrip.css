@@ -1,0 +1,45 @@
+.credibility-strip {
+  position: relative;
+  background: var(--color-bg);
+  padding: 18px 0 42px;
+}
+
+.credibility-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.credibility-card {
+  min-height: 96px;
+  padding: 18px 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-xl);
+  background: linear-gradient(180deg, rgba(20, 31, 56, 0.86), rgba(12, 18, 34, 0.92));
+  box-shadow: var(--shadow-lg);
+}
+
+.credibility-card h2 {
+  margin-bottom: 10px;
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.credibility-card p {
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  line-height: 1.65;
+}
+
+@media (max-width: 1040px) {
+  .credibility-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .credibility-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -13,15 +13,15 @@ const Hero = () => {
     <section id="hero" className="hero">
       <div className="container hero-container">
         <div className="hero-content">
-          <div className="hero-badge">Software Developer</div>
+          <div className="hero-badge">SOFTWARE DEVELOPER</div>
           <h1 className="hero-title">
-            Hi, I'm <span className="hero-name">Saleem</span>
+            Hi, I'm <span className="hero-name">Michael Lee.</span>
           </h1>
           <p className="hero-subtitle">
-            I build business tools, internal dashboards, and AI-assisted applications that solve real operational problems
+            I build AI-powered tools and full-stack web applications that solve real workflow problems.
           </p>
           <p className="hero-description">
-            Focused on creating practical software that streamlines workflows, improves team efficiency, and delivers measurable value to organizations.
+            Computer Information Systems student with a Communication Design background, focused on clean interfaces, browser automation, APIs, and AI-assisted workflows.
           </p>
           <div className="hero-actions">
             <button 
@@ -30,14 +30,8 @@ const Hero = () => {
             >
               View Projects
             </button>
-            <button 
-              className="hero-button hero-button-secondary"
-              onClick={() => scrollToSection('contact')}
-            >
-              Get in Touch
-            </button>
             <a 
-              href="https://github.com/saleem" 
+              href="https://github.com/michaelleethedev" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hero-button hero-button-outline"
@@ -47,20 +41,12 @@ const Hero = () => {
               </svg>
               GitHub
             </a>
-          </div>
-        </div>
-        <div className="hero-visual">
-          <div className="hero-card hero-card-1">
-            <div className="hero-card-icon">💼</div>
-            <div className="hero-card-text">Business Tools</div>
-          </div>
-          <div className="hero-card hero-card-2">
-            <div className="hero-card-icon">📊</div>
-            <div className="hero-card-text">Dashboards</div>
-          </div>
-          <div className="hero-card hero-card-3">
-            <div className="hero-card-icon">🤖</div>
-            <div className="hero-card-text">AI Applications</div>
+            <a
+              href="mailto:michael.b.lee22@gmail.com?subject=Resume%20Request"
+              className="hero-button hero-button-ghost"
+            >
+              Resume
+            </a>
           </div>
         </div>
       </div>
