@@ -3,32 +3,20 @@ import './CredibilityStrip.css';
 
 const CredibilityStrip = () => {
   const items = [
-    {
-      title: 'AI Observability Concept',
-      text: 'TraceForge AI explores agent traces, tool calls, policy events, and risk review'
-    },
-    {
-      title: 'Published Chrome Extension',
-      text: 'Seamless is a browser productivity tool available on the Chrome Web Store'
-    },
-    {
-      title: 'EdTech SaaS Dashboard',
-      text: 'SkillBridge AI uses fictional student data for learning analytics workflows'
-    },
-    {
-      title: 'Mock + Local Data',
-      text: 'Portfolio demos avoid private records, API keys, and production credentials'
-    }
+    { value: 'AI', label: 'Observability dashboard' },
+    { value: 'Chrome', label: 'Published extension' },
+    { value: 'EdTech', label: 'Learning analytics SaaS' },
+    { value: 'Safe demos', label: 'Mock and local data only' }
   ];
 
   return (
-    <section className="credibility-strip" aria-label="Portfolio credibility highlights">
+    <section className="credibility-strip" aria-label="Portfolio at a glance">
       <div className="container credibility-container">
         {items.map((item) => (
-          <article className="credibility-card" key={item.title}>
-            <h2>{item.title}</h2>
-            <p>{item.text}</p>
-          </article>
+          <div className="credibility-item" key={item.label}>
+            <strong>{item.value}</strong>
+            <span>{item.label}</span>
+          </div>
         ))}
       </div>
     </section>

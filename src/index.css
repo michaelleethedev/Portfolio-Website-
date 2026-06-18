@@ -7,22 +7,22 @@
 }
 
 :root {
-  --color-primary: #5b8cff;
-  --color-primary-dark: #315fdc;
-  --color-primary-light: #8fb2ff;
+  --color-primary: #1f7aff;
+  --color-primary-dark: #1457d9;
+  --color-primary-light: #63b8ff;
   --color-secondary: #f8fafc;
-  --color-text: #eef4ff;
-  --color-text-light: #aebbd2;
-  --color-text-muted: #75839d;
-  --color-bg: #070b16;
-  --color-bg-secondary: #0d1425;
-  --color-bg-tertiary: #121b31;
-  --color-panel: rgba(15, 23, 42, 0.86);
-  --color-panel-strong: rgba(20, 31, 56, 0.94);
+  --color-text: #f4f7fc;
+  --color-text-light: #a8b3c7;
+  --color-text-muted: #8290a8;
+  --color-bg: #03060c;
+  --color-bg-secondary: #080d18;
+  --color-bg-tertiary: #111c31;
+  --color-panel: rgba(12, 20, 36, 0.88);
+  --color-panel-strong: rgba(17, 28, 49, 0.95);
   --color-border: rgba(148, 163, 184, 0.18);
   --color-border-light: rgba(191, 219, 254, 0.14);
-  --color-accent: #a78bfa;
-  --color-glow: rgba(91, 140, 255, 0.18);
+  --color-accent: #13d8d2;
+  --color-glow: rgba(31, 122, 255, 0.16);
   
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -63,6 +63,12 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 112px;
+  background: var(--color-bg);
+}
+
+section[id] {
+  scroll-margin-top: 112px;
 }
 
 body {
@@ -71,9 +77,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-text);
   background:
-    radial-gradient(circle at 18% 8%, rgba(91, 140, 255, 0.16), transparent 30rem),
-    radial-gradient(circle at 86% 18%, rgba(167, 139, 250, 0.14), transparent 28rem),
-    linear-gradient(180deg, #070b16 0%, #0a1020 42%, #070b16 100%);
+    radial-gradient(circle at 18% 8%, rgba(31, 122, 255, 0.12), transparent 30rem),
+    radial-gradient(circle at 86% 18%, rgba(19, 216, 210, 0.06), transparent 28rem),
+    linear-gradient(180deg, #03060c 0%, #070b14 42%, #03060c 100%);
   line-height: 1.6;
   font-size: var(--font-size-base);
 }
@@ -120,6 +126,11 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 ul {
@@ -181,5 +192,20 @@ img {
   :root {
     --font-size-5xl: 1.875rem;
     --font-size-4xl: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

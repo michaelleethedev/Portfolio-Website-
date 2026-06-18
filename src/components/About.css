@@ -18,7 +18,7 @@
   padding: 26px 28px;
   border: 1px solid var(--color-border);
   border-radius: 18px;
-  background: linear-gradient(180deg, rgba(20, 31, 56, 0.78), rgba(10, 16, 32, 0.9));
+  background: linear-gradient(180deg, rgba(12, 20, 36, 0.88), rgba(4, 8, 16, 0.96));
   box-shadow: var(--shadow-md);
   color: var(--color-text-light);
   font-size: clamp(1.04rem, 1.5vw, 1.18rem);

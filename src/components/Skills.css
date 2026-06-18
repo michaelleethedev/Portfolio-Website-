@@ -1,6 +1,6 @@
 .skills {
   background:
-    radial-gradient(circle at 85% 20%, rgba(167, 139, 250, 0.1), transparent 24rem),
+    radial-gradient(circle at 85% 20%, rgba(19, 216, 210, 0.045), transparent 24rem),
     var(--color-bg);
   padding: 72px 0;
 }
@@ -20,7 +20,7 @@
 .skill-category-card {
   min-height: 100%;
   padding: 24px;
-  background: linear-gradient(180deg, rgba(20, 31, 56, 0.84), rgba(10, 16, 32, 0.9));
+  background: linear-gradient(180deg, rgba(12, 20, 36, 0.9), rgba(4, 8, 16, 0.96));
   border: 1px solid var(--color-border);
   border-radius: 16px;
   box-shadow: var(--shadow-md);
@@ -29,7 +29,7 @@
 
 .skill-category-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(143, 178, 255, 0.32);
+  border-color: rgba(99, 184, 255, 0.32);
   box-shadow: var(--shadow-lg);
 }
 
@@ -51,18 +51,18 @@
   align-items: center;
   min-height: 30px;
   padding: 6px 10px;
-  background: rgba(91, 140, 255, 0.09);
-  color: #c7d7ff;
+  background: rgba(31, 122, 255, 0.09);
+  color: #c8edff;
   border-radius: 8px;
   font-size: 13px;
   font-weight: 650;
-  border: 1px solid rgba(143, 178, 255, 0.18);
+  border: 1px solid rgba(99, 184, 255, 0.18);
   transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 }
 
 .skill-tag:hover {
-  background-color: rgba(91, 140, 255, 0.16);
-  border-color: rgba(143, 178, 255, 0.34);
+  background-color: rgba(31, 122, 255, 0.16);
+  border-color: rgba(99, 184, 255, 0.34);
   color: #ffffff;
 }
 

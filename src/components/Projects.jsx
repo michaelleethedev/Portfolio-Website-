@@ -2,109 +2,107 @@ import React from 'react';
 import ProjectCard from './ProjectCard';
 import './Projects.css';
 
-const Projects = () => {
-  const chromeWebStoreUrl = 'https://chromewebstore.google.com/detail/seamless/phipkfflgldgfdmgenobpklmlnpekgph?hl=en';
-  const githubUrl = 'https://github.com/michaelleethedev';
+const assetBase = import.meta.env.BASE_URL;
 
-  const projects = [
-    {
-      title: 'TraceForge AI',
-      subtitle: 'AI observability / agent monitoring dashboard',
-      status: 'Featured Project',
-      summary: 'A portfolio demo dashboard concept for monitoring AI agent activity, tool calls, latency, risk signals, traces, and policy events.',
-      positioning: 'Enterprise AI safety and observability platform',
-      privacy: 'Uses mock data only. No real AI logs, API keys, or private user data.',
-      features: [
-        'Agent activity timeline with trace-level context',
-        'Tool call, latency, and policy event monitoring',
-        'Risk signal review for AI workflow oversight',
-        'Product-style dashboard UI built with mock data'
-      ],
-      tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Mock Data'],
-      visual: {
-        label: 'Trace Monitor',
-        items: ['Agent Run', 'Tool Call', 'Policy Event', 'Risk Review']
-      },
-      actions: [
-        { label: 'Live Demo', disabled: true, primary: true },
-        { label: 'GitHub', href: githubUrl, external: true },
-        { label: 'Case Study', disabled: true }
-      ],
-      featured: true
+const projects = [
+  {
+    title: 'TraceForge AI',
+    subtitle: 'AI observability dashboard',
+    status: 'Featured build',
+    availability: 'Demo deployment in progress',
+    summary: 'A monitoring interface for understanding AI agent activity, tool calls, latency, policy events, and risk signals in one trace-level view.',
+    highlights: [
+      'Agent activity timeline with trace context',
+      'Tool-call, latency, and policy monitoring',
+      'Risk review workflow for AI oversight'
+    ],
+    tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
+    privacy: 'Mock activity data — no API keys or private logs.',
+    visual: {
+      label: 'Trace Monitor',
+      items: ['Agent Run', 'Tool Call', 'Policy Event', 'Risk Review']
     },
-    {
-      title: 'Seamless',
-      subtitle: 'Chrome extension',
-      status: 'Published Chrome Extension',
-      summary: 'A Chrome extension for organizing, searching, favoriting, and reusing workflow templates directly in the browser.',
-      positioning: 'Browser productivity and workflow automation tool',
-      privacy: 'Stores templates locally. No real user data is collected in the demo.',
-      features: [
-        'Template organization with folders, search, and favorites',
-        'Reusable workflow snippets available directly in the browser',
-        'Fast local-template access for repeated writing tasks',
-        'Privacy-first local storage model'
-      ],
-      tech: ['TypeScript', 'Chrome Extension API', 'Tailwind CSS', 'Local Storage'],
-      visual: {
-        label: 'Template Library',
-        items: ['Search Templates', 'Favorite Reply', 'Insert Snippet', 'Local Storage']
-      },
-      actions: [
-        { label: 'Live Demo', href: chromeWebStoreUrl, primary: true, external: true },
-        { label: 'GitHub', href: 'https://github.com/michaelleethedev/seamless-extension', external: true },
-        { label: 'Case Study', disabled: true }
-      ]
+    actions: [],
+    featured: true
+  },
+  {
+    title: 'Seamless',
+    subtitle: 'Browser productivity extension',
+    status: 'Published product',
+    availability: 'Live on the Chrome Web Store',
+    summary: 'A Chrome extension for organizing, searching, favoriting, and inserting reusable writing templates without leaving the browser.',
+    highlights: [
+      'Folder, search, and favorites organization',
+      'One-click reusable template insertion',
+      'Privacy-first local storage'
+    ],
+    tech: ['TypeScript', 'Chrome APIs', 'Tailwind CSS', 'Local Storage'],
+    privacy: 'Templates remain local to the user’s browser.',
+    image: `${assetBase}images/projects/seamless/seamless-overview.webp`,
+    imageAlt: 'Seamless Chrome extension template library showing search, categories, favorites, and reusable templates',
+    imageWidth: 1280,
+    imageHeight: 800,
+    visual: {
+      label: 'Template Library',
+      items: ['Search Templates', 'Favorite Reply', 'Insert Snippet', 'Local Storage']
     },
-    {
-      title: 'SkillBridge AI',
-      subtitle: 'EdTech SaaS dashboard',
-      status: 'Product-Style Build',
-      summary: 'A tutoring dashboard concept for tracking student progress, identifying learning gaps, generating practice plans, and creating parent/admin summaries.',
-      positioning: 'AI-powered learning analytics platform',
-      privacy: 'Uses fictional student data only. No real student records or private education data.',
-      features: [
-        'Student progress dashboard with fictional records',
-        'Learning gap review and skill mastery tracking',
-        'Practice plan and summary generation flows',
-        'Admin-friendly education analytics interface'
-      ],
-      tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Mock Data'],
-      visual: {
-        label: 'Learning Insights',
-        items: ['Student Profile', 'Skill Gaps', 'Practice Plan', 'Parent Summary']
-      },
-      actions: [
-        { label: 'Live Demo', disabled: true, primary: true },
-        { label: 'GitHub', href: githubUrl, external: true },
-        { label: 'Case Study', disabled: true }
-      ]
-    }
-  ];
+    actions: [
+      {
+        label: 'View on Chrome Web Store',
+        href: 'https://chromewebstore.google.com/detail/seamless/phipkfflgldgfdmgenobpklmlnpekgph?hl=en',
+        primary: true,
+        external: true
+      }
+    ]
+  },
+  {
+    title: 'SkillBridge AI',
+    subtitle: 'EdTech SaaS dashboard',
+    status: 'Product build',
+    availability: 'Demo deployment in progress',
+    summary: 'A tutoring dashboard for reviewing fictional student progress, finding learning gaps, generating practice plans, and sharing clear summaries.',
+    highlights: [
+      'Progress and skill-mastery dashboard',
+      'Learning-gap review workflows',
+      'Practice-plan and summary generation'
+    ],
+    tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
+    privacy: 'Fictional student records — no private education data.',
+    image: `${assetBase}images/projects/skillbridge/skillbridge-dashboard.webp`,
+    imageAlt: 'SkillBridge AI dashboard showing student metrics, an AI priority queue, and a weekly learning plan',
+    imageWidth: 2880,
+    imageHeight: 1622,
+    imagePosition: 'top center',
+    visual: {
+      label: 'Learning Insights',
+      items: ['Student Profile', 'Skill Gaps', 'Practice Plan', 'Parent Summary']
+    },
+    actions: []
+  }
+];
 
-  return (
-    <section id="projects" className="section projects">
-      <div className="container">
-        <div className="projects-header">
-          <span className="projects-kicker">Featured Projects</span>
-          <h2 className="section-title">Product-style software builds</h2>
-          <p className="section-subtitle">
-            Three focused portfolio demos showing AI observability, browser productivity, and education analytics through polished technical interfaces.
-          </p>
-        </div>
-
-        <div className="project-disclaimer">
-          Portfolio demos use mock or local data only. No API keys, private user records, student records, or production credentials are included.
-        </div>
-
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </div>
+const Projects = () => (
+  <section id="projects" className="section projects">
+    <div className="container">
+      <div className="projects-header">
+        <span className="projects-kicker">Selected work</span>
+        <h2 className="section-title">Products built around real workflows</h2>
+        <p className="section-subtitle">
+          A focused set of interfaces spanning AI observability, browser productivity, and education analytics.
+        </p>
       </div>
-    </section>
-  );
-};
+
+      <div className="projects-grid">
+        {projects.map((project) => (
+          <ProjectCard key={project.title} project={project} />
+        ))}
+      </div>
+
+      <p className="projects-note">
+        Public demos are linked when available. Private source repositories stay private while they are prepared for portfolio review.
+      </p>
+    </div>
+  </section>
+);
 
 export default Projects;
