@@ -78,6 +78,47 @@ const projects = [
       items: ['Student Profile', 'Skill Gaps', 'Practice Plan', 'Parent Summary']
     },
     actions: []
+  },
+  {
+    title: 'RallyTab',
+    subtitle: 'Sports-bar ordering and operations platform',
+    status: 'New product build',
+    availability: 'Public repository',
+    summary: 'A mobile-first ordering and live-tab experience that lets sports-bar guests order from their table while staff manage kitchen tickets, service requests, table activity, and menu availability.',
+    highlights: [
+      'Table-aware QR ordering with a persistent local cart',
+      'Synchronized kitchen, order, and service workflows',
+      'Live-tab splitting and staff operations dashboards'
+    ],
+    tech: ['Next.js 15', 'TypeScript', 'React 19', 'Tailwind CSS', 'Local Storage'],
+    privacy: 'Mock checkout and demo data only — no real payments or customer records.',
+    imagePair: {
+      desktop: {
+        src: `${assetBase}images/projects/rallytab/rallytab-dashboard.png`,
+        alt: 'RallyTab staff operations dashboard showing active tabs, open orders, kitchen tickets, sales pace, and service requests',
+        width: 1604,
+        height: 1004
+      },
+      mobile: {
+        src: `${assetBase}images/projects/rallytab/rallytab-mobile.png`,
+        alt: 'RallyTab mobile guest experience showing a live game, table number, menu categories, and popular food items',
+        width: 708,
+        height: 1514
+      }
+    },
+    visual: {
+      label: 'Live Tab Operations',
+      items: ['Table QR Order', 'Kitchen Queue', 'Service Requests', 'Split Tab']
+    },
+    actions: [
+      {
+        label: 'View RallyTab on GitHub',
+        href: 'https://github.com/michaelleethedev/RallyTab',
+        primary: true,
+        external: true
+      }
+    ],
+    wide: true
   }
 ];
 
@@ -88,7 +129,7 @@ const Projects = () => (
         <span className="projects-kicker">Selected work</span>
         <h2 className="section-title">Products built around real workflows</h2>
         <p className="section-subtitle">
-          A focused set of interfaces spanning AI observability, browser productivity, and education analytics.
+          A focused set of products spanning AI observability, browser productivity, education analytics, and hospitality operations.
         </p>
       </div>
 
@@ -99,7 +140,7 @@ const Projects = () => (
       </div>
 
       <p className="projects-note">
-        Public demos are linked when available. Private source repositories stay private while they are prepared for portfolio review.
+        Public demos and repositories are linked when available. Private source stays private while it is prepared for portfolio review.
       </p>
     </div>
   </section>

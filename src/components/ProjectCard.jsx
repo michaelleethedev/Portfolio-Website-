@@ -2,8 +2,34 @@ import React from 'react';
 import './ProjectCard.css';
 
 const ProjectCard = ({ project }) => (
-  <article className={`project-card ${project.featured ? 'project-card-featured' : ''}`}>
-    {project.image ? (
+  <article className={`project-card ${project.featured ? 'project-card-featured' : ''} ${project.wide ? 'project-card-wide' : ''}`}>
+    {project.imagePair ? (
+      <div className="project-card-showcase" aria-label={`${project.title} mobile and desktop interface previews`}>
+        <div className="project-card-showcase-desktop">
+          <img
+            src={project.imagePair.desktop.src}
+            alt={project.imagePair.desktop.alt}
+            loading="lazy"
+            decoding="async"
+            width={project.imagePair.desktop.width}
+            height={project.imagePair.desktop.height}
+          />
+          <span className="project-card-showcase-label">Staff dashboard</span>
+        </div>
+        <div className="project-card-showcase-mobile">
+          <span className="project-card-showcase-speaker" aria-hidden="true"></span>
+          <img
+            src={project.imagePair.mobile.src}
+            alt={project.imagePair.mobile.alt}
+            loading="lazy"
+            decoding="async"
+            width={project.imagePair.mobile.width}
+            height={project.imagePair.mobile.height}
+          />
+          <span className="project-card-showcase-label">Guest mobile</span>
+        </div>
+      </div>
+    ) : project.image ? (
       <div className="project-card-image-wrap">
         <img
           src={project.image}
