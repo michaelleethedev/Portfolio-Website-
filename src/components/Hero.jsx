@@ -12,10 +12,10 @@ const Hero = () => {
         <div className="hero-content">
           <p className="hero-badge">Michael Lee — Software Builder</p>
           <h1 className="hero-title">
-            Turning real problems into <span className="hero-name">working products.</span>
+            Building software <span className="hero-name">with purpose.</span>
           </h1>
           <p className="hero-description hero-description-lead">
-            I’m a Computer Information Systems student with a communication design background, building full-stack apps, browser tools, and AI-powered software with a focus on practical use and clean experiences.
+            I create full-stack applications, browser tools, and AI-powered products focused on usability, performance, and thoughtful design.
           </p>
           <div className="hero-actions">
             <button className="hero-button hero-button-primary" onClick={scrollToProjects}>

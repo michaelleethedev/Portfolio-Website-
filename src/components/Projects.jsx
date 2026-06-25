@@ -6,26 +6,6 @@ const assetBase = import.meta.env.BASE_URL;
 
 const projects = [
   {
-    title: 'TraceForge AI',
-    subtitle: 'AI observability dashboard',
-    status: 'Featured build',
-    availability: 'Demo deployment in progress',
-    summary: 'A monitoring interface for understanding AI agent activity, tool calls, latency, policy events, and risk signals in one trace-level view.',
-    highlights: [
-      'Agent activity timeline with trace context',
-      'Tool-call, latency, and policy monitoring',
-      'Risk review workflow for AI oversight'
-    ],
-    tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
-    privacy: 'Mock activity data — no API keys or private logs.',
-    visual: {
-      label: 'Trace Monitor',
-      items: ['Agent Run', 'Tool Call', 'Policy Event', 'Risk Review']
-    },
-    actions: [],
-    featured: true
-  },
-  {
     title: 'Seamless',
     subtitle: 'Browser productivity extension',
     status: 'Published product',
@@ -129,7 +109,7 @@ const Projects = () => (
         <span className="projects-kicker">Selected work</span>
         <h2 className="section-title">Products built around real workflows</h2>
         <p className="section-subtitle">
-          A focused set of products spanning AI observability, browser productivity, education analytics, and hospitality operations.
+          A focused set of products spanning browser productivity, education analytics, and hospitality operations.
         </p>
       </div>
 

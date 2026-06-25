@@ -1,6 +1,6 @@
 .credibility-strip {
   background: var(--color-bg);
-  padding: 0 0 52px;
+  padding: 0 0 64px;
 }
 
 .credibility-container {
@@ -9,7 +9,7 @@
   gap: 1px;
   overflow: hidden;
   padding: 1px;
-  border-radius: 16px;
+  border-radius: 12px;
   background: var(--color-border);
   box-shadow: var(--shadow-md);
 }
@@ -17,8 +17,8 @@
 .credibility-item {
   display: grid;
   gap: 5px;
-  min-height: 84px;
-  padding: 18px 20px;
+  min-height: 88px;
+  padding: 20px 22px;
   background: rgba(8, 13, 24, 0.98);
 }
 
@@ -36,7 +36,7 @@
 }
 
 @media (max-width: 760px) {
-  .credibility-strip { padding-bottom: 36px; }
+  .credibility-strip { padding-bottom: 44px; }
   .credibility-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 

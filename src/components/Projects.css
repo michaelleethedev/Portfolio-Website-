@@ -1,5 +1,5 @@
 .section.projects {
-  padding: 86px 0 76px;
+  padding: 84px 0 82px;
   background:
     radial-gradient(circle at 8% 16%, rgba(31, 122, 255, 0.08), transparent 24rem),
     radial-gradient(circle at 88% 8%, rgba(19, 216, 210, 0.035), transparent 22rem),
@@ -23,12 +23,12 @@
 }
 
 .projects .section-title { max-width: 820px; margin-inline: auto; text-wrap: balance; }
-.projects .section-subtitle { max-width: 720px; margin-bottom: 42px; }
+.projects .section-subtitle { max-width: 680px; margin-bottom: 38px; }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  gap: 24px;
   align-items: stretch;
 }
 
@@ -42,7 +42,7 @@
 }
 
 @media (max-width: 800px) {
-  .section.projects { padding: 62px 0 58px; }
+  .section.projects { padding: 60px 0 58px; }
   .projects-grid { grid-template-columns: 1fr; }
   .projects .section-subtitle { margin-bottom: 30px; }
   .projects-note { text-align: left; }
