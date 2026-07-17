@@ -93,25 +93,25 @@ saleem-portfolio/
 
 All projects are framed as real business solutions:
 
-1. **AI Sales Ops Assistant**
-   - Automates sales operations with GPT-4
-   - Lead scoring, CRM updates, pipeline analytics
-   - Tech: React, Node.js, OpenAI API, PostgreSQL
+1. **ResolveIT**
+   - Interactive IT support operations demo
+   - Ticket triage, device health, VPN diagnostics, employee updates
+   - Tech: Next.js, TypeScript, React, Tailwind CSS
 
-2. **IT Asset + Support Ticket Manager**
-   - Centralized IT asset tracking and helpdesk
-   - Asset lifecycle, ticket routing, SLA monitoring
-   - Tech: React, TypeScript, Node.js, MongoDB
+2. **RallyTab**
+   - Sports-bar ordering and operations platform
+   - Guest ordering, kitchen queue, staff dashboard, service requests
+   - Tech: Next.js, TypeScript, React, Tailwind CSS
 
-3. **Client Content Request Portal**
-   - Streamlines content requests and approvals
-   - Structured intake, workflows, status tracking
-   - Tech: React, Node.js, PostgreSQL, AWS S3
+3. **SkillBridge AI**
+   - Tutoring dashboard for fictional student progress workflows
+   - Skill gaps, practice planning, tutor review summaries
+   - Tech: Next.js, TypeScript, React, Tailwind CSS
 
-4. **Tutoring Progress Dashboard**
-   - Student performance tracking and analytics
-   - Progress trends, scheduling, parent reports
-   - Tech: React, Python, Flask, PostgreSQL
+4. **Seamless**
+   - Live Chrome extension for reusable writing templates
+   - Folders, search, favorites, local browser storage
+   - Tech: TypeScript, Chrome APIs, Tailwind CSS
 
 ## 🚀 Current Status
 

@@ -1,129 +1,107 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
+import ProjectDemoModal from './ProjectDemoModal';
+import { projects } from '../data/projects';
 import './Projects.css';
 
-const assetBase = import.meta.env.BASE_URL;
+const Projects = () => {
+  const [activeDemoProject, setActiveDemoProject] = useState(null);
+  const [activeProjectSlug, setActiveProjectSlug] = useState(projects[0]?.slug);
 
-const projects = [
-  {
-    title: 'Seamless',
-    subtitle: 'Browser productivity extension',
-    status: 'Published product',
-    availability: 'Live on the Chrome Web Store',
-    summary: 'A Chrome extension for organizing, searching, favoriting, and inserting reusable writing templates without leaving the browser.',
-    highlights: [
-      'Folder, search, and favorites organization',
-      'One-click reusable template insertion',
-      'Privacy-first local storage'
-    ],
-    tech: ['TypeScript', 'Chrome APIs', 'Tailwind CSS', 'Local Storage'],
-    privacy: 'Templates remain local to the user’s browser.',
-    image: `${assetBase}images/projects/seamless/seamless-overview.webp`,
-    imageAlt: 'Seamless Chrome extension template library showing search, categories, favorites, and reusable templates',
-    imageWidth: 1280,
-    imageHeight: 800,
-    visual: {
-      label: 'Template Library',
-      items: ['Search Templates', 'Favorite Reply', 'Insert Snippet', 'Local Storage']
-    },
-    actions: [
-      {
-        label: 'View on Chrome Web Store',
-        href: 'https://chromewebstore.google.com/detail/seamless/phipkfflgldgfdmgenobpklmlnpekgph?hl=en',
-        primary: true,
-        external: true
-      }
-    ]
-  },
-  {
-    title: 'SkillBridge AI',
-    subtitle: 'EdTech SaaS dashboard',
-    status: 'Product build',
-    availability: 'Demo deployment in progress',
-    summary: 'A tutoring dashboard for reviewing fictional student progress, finding learning gaps, generating practice plans, and sharing clear summaries.',
-    highlights: [
-      'Progress and skill-mastery dashboard',
-      'Learning-gap review workflows',
-      'Practice-plan and summary generation'
-    ],
-    tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
-    privacy: 'Fictional student records — no private education data.',
-    image: `${assetBase}images/projects/skillbridge/skillbridge-dashboard.webp`,
-    imageAlt: 'SkillBridge AI dashboard showing student metrics, an AI priority queue, and a weekly learning plan',
-    imageWidth: 2880,
-    imageHeight: 1622,
-    imagePosition: 'top center',
-    visual: {
-      label: 'Learning Insights',
-      items: ['Student Profile', 'Skill Gaps', 'Practice Plan', 'Parent Summary']
-    },
-    actions: []
-  },
-  {
-    title: 'RallyTab',
-    subtitle: 'Sports-bar ordering and operations platform',
-    status: 'New product build',
-    availability: 'Public repository',
-    summary: 'A mobile-first ordering and live-tab experience that lets sports-bar guests order from their table while staff manage kitchen tickets, service requests, table activity, and menu availability.',
-    highlights: [
-      'Table-aware QR ordering with a persistent local cart',
-      'Synchronized kitchen, order, and service workflows',
-      'Live-tab splitting and staff operations dashboards'
-    ],
-    tech: ['Next.js 15', 'TypeScript', 'React 19', 'Tailwind CSS', 'Local Storage'],
-    privacy: 'Mock checkout and demo data only — no real payments or customer records.',
-    imagePair: {
-      desktop: {
-        src: `${assetBase}images/projects/rallytab/rallytab-dashboard.png`,
-        alt: 'RallyTab staff operations dashboard showing active tabs, open orders, kitchen tickets, sales pace, and service requests',
-        width: 1604,
-        height: 1004
+  useEffect(() => {
+    const projectCards = projects
+      .map((project) => document.getElementById(`project-${project.slug}`))
+      .filter(Boolean);
+
+    if (!projectCards.length) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const mostVisible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (mostVisible?.target?.dataset?.projectSlug) {
+          setActiveProjectSlug(mostVisible.target.dataset.projectSlug);
+        }
       },
-      mobile: {
-        src: `${assetBase}images/projects/rallytab/rallytab-mobile.png`,
-        alt: 'RallyTab mobile guest experience showing a live game, table number, menu categories, and popular food items',
-        width: 708,
-        height: 1514
-      }
-    },
-    visual: {
-      label: 'Live Tab Operations',
-      items: ['Table QR Order', 'Kitchen Queue', 'Service Requests', 'Split Tab']
-    },
-    actions: [
       {
-        label: 'View RallyTab on GitHub',
-        href: 'https://github.com/michaelleethedev/RallyTab',
-        primary: true,
-        external: true
+        rootMargin: '-35% 0px -45% 0px',
+        threshold: [0.2, 0.45, 0.7]
       }
-    ],
-    wide: true
-  }
-];
+    );
 
-const Projects = () => (
-  <section id="projects" className="section projects">
-    <div className="container">
-      <div className="projects-header">
-        <span className="projects-kicker">Selected work</span>
-        <h2 className="section-title">Products built around real workflows</h2>
-        <p className="section-subtitle">
-          A focused set of products spanning browser productivity, education analytics, and hospitality operations.
+    projectCards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
+
+  const jumpToProject = (project) => {
+    setActiveProjectSlug(project.slug);
+    document.getElementById(`project-${project.slug}`)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
+  return (
+    <section id="projects" className="section projects">
+      <div className="container">
+        <div className="projects-header">
+          <span className="projects-kicker">Featured Projects</span>
+          <h2 className="section-title">Interactive builds recruiters can open fast</h2>
+          <p className="section-subtitle">
+            ResolveIT, RallyTab, and SkillBridge AI lead the portfolio, with Seamless included as a live Chrome extension. Each card gives a quick path to a demo, repo, and case study.
+          </p>
+        </div>
+
+        <div className="project-lab-callout">
+          <div>
+            <span>Recruiter flow</span>
+            <strong>Scan the cards, open a live workflow, then jump into the case study for build decisions.</strong>
+          </div>
+          <button type="button" onClick={() => setActiveDemoProject(projects[0])}>
+            Try ResolveIT demo
+          </button>
+        </div>
+
+        <div className="projects-mobile-switcher" aria-label="Jump to featured project">
+          {projects.map((project) => (
+            <button
+              key={project.slug}
+              type="button"
+              className={activeProjectSlug === project.slug ? 'projects-mobile-switcher-active' : ''}
+              onClick={() => jumpToProject(project)}
+              aria-pressed={activeProjectSlug === project.slug}
+            >
+              <span>{project.title}</span>
+              <small>{project.liveDemo?.href || project.liveDemo?.modal ? 'Demo ready' : 'Case study'}</small>
+            </button>
+          ))}
+        </div>
+
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              project={project}
+              onDemo={() => setActiveDemoProject(project)}
+            />
+          ))}
+        </div>
+
+        <p className="projects-note">
+          Public demos and repositories are linked when available. Private source stays private while it is prepared for portfolio review.
         </p>
       </div>
 
-      <div className="projects-grid">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
-        ))}
-      </div>
-
-      <p className="projects-note">
-        Public demos and repositories are linked when available. Private source stays private while it is prepared for portfolio review.
-      </p>
-    </div>
-  </section>
-);
+      {activeDemoProject && (
+        <ProjectDemoModal
+          project={activeDemoProject}
+          onClose={() => setActiveDemoProject(null)}
+        />
+      )}
+    </section>
+  );
+};
 
 export default Projects;

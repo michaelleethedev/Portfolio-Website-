@@ -59,7 +59,15 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.hash = sectionId === 'hero' ? '' : `#${sectionId}`;
+      window.setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    }
     setMobileMenuOpen(false);
   };
 

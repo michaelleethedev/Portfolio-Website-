@@ -1,0 +1,73 @@
+.recruiter-cta {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 900;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 14px;
+  background: rgba(3, 6, 12, 0.9);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(18px);
+}
+
+.recruiter-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 11px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.055);
+  color: #e8f4ff;
+  font-size: 0.78rem;
+  font-weight: 850;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.recruiter-cta-primary {
+  border-color: rgba(31, 122, 255, 0.32);
+  background: rgba(31, 122, 255, 0.16);
+}
+
+.recruiter-cta a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 184, 255, 0.38);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.recruiter-cta a:active {
+  transform: translateY(0);
+}
+
+.recruiter-cta a:focus-visible {
+  outline: 2px solid rgba(99, 184, 255, 0.82);
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .recruiter-cta {
+    right: 14px;
+    bottom: 14px;
+    left: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(250px, calc(100vw - 28px));
+    padding: 7px;
+    border-radius: 13px;
+  }
+
+  .recruiter-cta a {
+    min-width: 0;
+    min-height: 42px;
+    padding-inline: 10px;
+    font-size: 0.72rem;
+  }
+
+  .recruiter-cta-secondary {
+    display: none;
+  }
+}

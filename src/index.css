@@ -82,6 +82,7 @@ body {
     linear-gradient(180deg, #03060c 0%, #070b14 42%, #03060c 100%);
   line-height: 1.6;
   font-size: var(--font-size-base);
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -185,6 +186,10 @@ img {
   
   .section {
     padding: var(--spacing-2xl) 0;
+  }
+
+  body {
+    padding-bottom: 74px;
   }
 }
 

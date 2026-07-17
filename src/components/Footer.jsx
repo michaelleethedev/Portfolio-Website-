@@ -2,6 +2,20 @@ import React from 'react';
 import './Footer.css';
 
 const Footer = () => {
+  const scrollToSection = (event, sectionId) => {
+    event.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
+    window.location.hash = `#${sectionId}`;
+    window.setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  };
+
   return (
     <footer className="footer">
       <div className="container footer-container">
@@ -16,10 +30,10 @@ const Footer = () => {
           <div className="footer-links">
             <div className="footer-link-group">
               <h4 className="footer-link-title">Navigation</h4>
-              <a href="#about" className="footer-link">About</a>
-              <a href="#skills" className="footer-link">Skills</a>
-              <a href="#projects" className="footer-link">Projects</a>
-              <a href="#contact" className="footer-link">Contact</a>
+              <a href="#about" className="footer-link" onClick={(event) => scrollToSection(event, 'about')}>About</a>
+              <a href="#skills" className="footer-link" onClick={(event) => scrollToSection(event, 'skills')}>Skills</a>
+              <a href="#projects" className="footer-link" onClick={(event) => scrollToSection(event, 'projects')}>Projects</a>
+              <a href="#contact" className="footer-link" onClick={(event) => scrollToSection(event, 'contact')}>Contact</a>
             </div>
 
             <div className="footer-link-group">

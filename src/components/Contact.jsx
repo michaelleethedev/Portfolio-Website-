@@ -38,6 +38,20 @@ const Contact = () => {
             </span>
           </a>
           <a
+            href="https://linkedin.com/in/michaelleethedev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-link"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.941v5.665H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.602 0 4.267 2.371 4.267 5.455v6.288zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.119 20.452H3.554V9h3.565v11.452z" />
+            </svg>
+            <span>
+              <strong>LinkedIn</strong>
+              linkedin.com/in/michaelleethedev
+            </span>
+          </a>
+          <a
             href="mailto:michael.b.lee22@gmail.com?subject=Resume%20Request"
             className="contact-link"
           >

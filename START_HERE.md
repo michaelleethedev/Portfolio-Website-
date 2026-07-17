@@ -58,7 +58,7 @@ This isn't a generic template. It's specifically designed to:
 ### Business-Focused
 Projects are framed as solutions to real problems:
 - ❌ "Todo app with React"
-- ✅ "AI Sales Ops Assistant that automates lead qualification"
+- ✅ "ResolveIT demo that walks through a critical VPN support incident"
 
 ### Premium Design
 - Modern color palette (professional blue)

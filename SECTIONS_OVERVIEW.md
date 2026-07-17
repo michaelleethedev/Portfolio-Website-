@@ -77,57 +77,49 @@ A visual guide to what each section contains and its purpose.
 
 **Contents**: 4 Premium Project Cards
 
-### Project 1: AI Sales Ops Assistant 🤖
-- **Summary**: Intelligent assistant for sales operations automation
-- **Problem**: Sales teams waste hours on manual tasks
-- **Features**: 
-  - Automated lead scoring with GPT-4
-  - Natural language CRM updates
-  - Email drafting for outreach
-  - Pipeline analytics
-  - Salesforce/HubSpot integration
-- **Tech**: React, Node.js, OpenAI API, PostgreSQL, Express, REST APIs
-- **Actions**: View Code, Live Demo (placeholder)
-
-### Project 2: IT Asset + Support Ticket Manager 💻
-- **Summary**: Centralized IT asset tracking and helpdesk
-- **Problem**: IT departments struggle with inventory and tickets
+### Project 1: ResolveIT
+- **Summary**: Interactive IT support operations demo
+- **Problem**: Static dashboards do not show how support work changes the employee experience
 - **Features**:
-  - Asset lifecycle tracking
-  - Ticket routing and SLA monitoring
-  - Equipment checkout workflow
-  - Maintenance reminders
-  - Custom reporting dashboard
-- **Tech**: React, TypeScript, Node.js, MongoDB, Express, Chart.js
-- **Actions**: View Code, Live Demo (placeholder)
+  - Technician workspace and employee self-service portal
+  - Ticket lifecycle, SLA triage, device health, and VPN diagnostics
+  - Internal notes, public updates, and local browser state
+- **Tech**: Next.js, TypeScript, React, Tailwind CSS, Lucide React, Recharts
+- **Actions**: Live Demo, GitHub, Case Study
 
-### Project 3: Client Content Request Portal 📝
-- **Summary**: Self-service portal for content requests
-- **Problem**: Requests arrive through multiple channels creating chaos
+### Project 2: RallyTab
+- **Summary**: Sports-bar ordering and operations platform
+- **Problem**: Guest ordering, kitchen work, and staff operations need connected views
 - **Features**:
-  - Structured request forms
-  - Multi-stage approvals
-  - Real-time status tracking
-  - Automated notifications
-  - Timeline visualization
-- **Tech**: React, Node.js, PostgreSQL, AWS S3, Tailwind CSS, Express
-- **Actions**: View Code, Live Demo (placeholder)
+  - Table-aware QR ordering
+  - Kitchen queue and service request tracking
+  - Staff dashboard for tabs, tables, and menu availability
+- **Tech**: Next.js, TypeScript, React, Tailwind CSS, Local Storage
+- **Actions**: Live Demo, GitHub, Case Study
 
-### Project 4: Tutoring Progress Dashboard 📊
-- **Summary**: Analytics for tutoring businesses
-- **Problem**: Need visibility into student performance trends
+### Project 3: SkillBridge AI
+- **Summary**: Tutoring dashboard and learning workflow
+- **Problem**: Tutors need fast ways to translate progress data into next steps
 - **Features**:
-  - Performance tracking with trends
-  - Session scheduling
-  - Automated parent reports
-  - Subject-specific analytics
-  - Tutor performance metrics
-- **Tech**: React, Python, Flask, PostgreSQL, Chart.js, Tailwind CSS
-- **Actions**: View Code, Live Demo (placeholder)
+  - Student progress and skill gap review
+  - Practice plan and parent summary workflows
+  - Fictional student data for safe portfolio review
+- **Tech**: Next.js, TypeScript, React, Tailwind CSS
+- **Actions**: Live Demo, GitHub, Case Study
+
+### Project 4: Seamless
+- **Summary**: Chrome extension for reusable writing templates
+- **Problem**: Repeated browser writing needs a faster, local-first workflow
+- **Features**:
+  - Template library with folders, search, and favorites
+  - One-click snippet insertion
+  - Privacy-first local browser storage
+- **Tech**: TypeScript, Chrome APIs, Tailwind CSS, Local Storage
+- **Actions**: Chrome Store, GitHub, Case Study
 
 **Purpose**: Demonstrate real-world software development capability
 
-**Design**: Case-study format, premium cards with shadows, clear hierarchy
+**Design**: Case-study format, premium cards with shadows, clear hierarchy, and dedicated project pages
 
 ---
 

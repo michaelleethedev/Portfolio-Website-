@@ -111,25 +111,39 @@ The production-ready files will be in the `dist/` folder.
 npm run preview
 ```
 
+### Connect Live Project Demos
+
+Some projects can point to external live demos when deployed. Add any available URLs to `.env.local`:
+
+```bash
+VITE_RALLYTAB_DEMO_URL=https://rally-tab.vercel.app
+VITE_RESOLVEIT_DEMO_URL=
+VITE_SKILLBRIDGE_DEMO_URL=
+```
+
+The portfolio will automatically use real live demo links when a URL is present. If a demo URL is not set, the project card still opens the built-in interactive portfolio preview.
+
 ## 📋 Featured Projects
 
-### 1. AI Sales Ops Assistant
-Intelligent assistant that automates sales operations tasks using GPT-4 for lead qualification, CRM updates, and pipeline analytics.
+### 1. ResolveIT
+Interactive IT support operations demo for triaging incidents, inspecting device health, running guided VPN diagnostics, and verifying employee-facing support updates.
 
-### 2. IT Asset + Support Ticket Manager
-Centralized platform for tracking IT assets, managing support requests, and monitoring equipment lifecycle.
+### 2. RallyTab
+Sports-bar ordering and operations platform with guest mobile ordering, staff dashboards, kitchen tickets, service requests, and table-aware workflows.
 
-### 3. Client Content Request Portal
-Self-service portal that streamlines content requests, approvals, and delivery for marketing teams.
+### 3. SkillBridge AI
+EdTech dashboard concept for reviewing fictional student progress, identifying learning gaps, and generating practical tutoring plans.
 
-### 4. Tutoring Progress Dashboard
-Analytics platform for tracking student progress, scheduling sessions, and measuring learning outcomes.
+### 4. Seamless
+Live Chrome extension for organizing, searching, favoriting, and inserting reusable writing templates directly in the browser.
 
 ## 🎯 Key Features
 
 - **Sticky Navigation**: Always accessible navigation with smooth scrolling
 - **Animated Hero Section**: Eye-catching hero with floating cards
 - **Premium Project Cards**: Case-study style project presentation
+- **Project Detail Pages**: Shareable case studies for each main project
+- **Recruiter CTA Bar**: Sticky Resume, GitHub, LinkedIn, and Email actions
 - **Skills Categorization**: Organized by Frontend, Backend, Tools, and Focus Areas
 - **Services Section**: Clear positioning for both employment and freelance
 - **Contact Integration**: Multiple contact methods with clear CTAs
@@ -186,12 +200,12 @@ This site can be deployed to any static hosting service:
 
 - [ ] Add blog section for technical writing
 - [ ] Implement dark mode toggle
-- [ ] Add project detail pages with more screenshots
+- [ ] Add more project screenshots as each demo matures
 - [ ] Integrate contact form with backend service
 - [ ] Add testimonials section
 - [ ] Implement analytics tracking
 - [ ] Add more interactive animations
-- [ ] Create case study pages for each project
+- [x] Create case study pages for each project
 
 ## 📄 License
 

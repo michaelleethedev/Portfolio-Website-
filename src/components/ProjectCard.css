@@ -8,6 +8,7 @@
   background: linear-gradient(180deg, rgba(12, 20, 36, 0.94), rgba(4, 8, 16, 0.98));
   box-shadow: var(--shadow-lg);
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  cursor: pointer;
 }
 
 .project-card::before {
@@ -24,6 +25,15 @@
   transform: translateY(-4px);
   border-color: rgba(99, 184, 255, 0.34);
   box-shadow: var(--shadow-xl);
+}
+
+.project-card:active {
+  transform: translateY(-1px);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid rgba(99, 184, 255, 0.86);
+  outline-offset: 4px;
 }
 
 .project-card:hover::before,
@@ -310,6 +320,57 @@
   line-height: 1.64;
 }
 
+.project-card-outcome {
+  display: grid;
+  gap: 7px;
+  padding: 14px;
+  border: 1px solid rgba(99, 184, 255, 0.16);
+  border-radius: 12px;
+  background:
+    linear-gradient(135deg, rgba(31, 122, 255, 0.12), rgba(19, 216, 210, 0.045)),
+    rgba(255, 255, 255, 0.035);
+}
+
+.project-card-outcome span,
+.project-card-section-label {
+  color: #79cbff;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-card-outcome p {
+  margin: 0;
+  color: #e2edff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.project-card-section-label {
+  margin-bottom: -7px;
+}
+
+.project-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.project-card-badges span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 9px;
+  border: 1px solid rgba(19, 216, 210, 0.18);
+  border-radius: 999px;
+  background: rgba(19, 216, 210, 0.07);
+  color: #bffbf7;
+  font-size: 0.7rem;
+  font-weight: 850;
+}
+
 .project-card-highlights {
   display: grid;
   gap: 8px;
@@ -378,6 +439,7 @@
   font-size: 0.8rem;
   font-weight: 800;
   transition: transform 180ms ease, box-shadow 180ms ease;
+  cursor: pointer;
 }
 
 .project-card-button-primary {
@@ -385,7 +447,33 @@
   box-shadow: 0 12px 28px rgba(31, 122, 255, 0.22);
 }
 
+.project-card-button-demo {
+  border: 1px solid rgba(19, 216, 210, 0.34);
+  background: rgba(19, 216, 210, 0.11);
+  color: #e8fffd;
+}
+
+.project-card-button-live {
+  border: 1px solid rgba(255, 178, 35, 0.34);
+  background: rgba(255, 178, 35, 0.12);
+  color: #ffe6b2;
+}
+
+.project-card-button-source {
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  background: rgba(255, 255, 255, 0.06);
+  color: #dbe7ff;
+}
+
+.project-card-button-disabled {
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(255, 255, 255, 0.035);
+  color: #8290a8;
+  cursor: not-allowed;
+}
+
 .project-card-button:hover { transform: translateY(-2px); }
+.project-card-button:active { transform: translateY(0); }
 .project-card-button:focus-visible { outline: 2px solid rgba(99, 184, 255, 0.82); outline-offset: 3px; }
 
 @media (max-width: 900px) {
@@ -402,7 +490,16 @@
 }
 
 @media (max-width: 600px) {
-  .project-card { border-radius: 14px; }
+  .project-card {
+    grid-template-rows: auto auto;
+    border-radius: 14px;
+    scroll-margin-top: 136px;
+  }
+
+  .project-card:active {
+    transform: scale(0.99);
+  }
+
   .project-card-visual { min-height: 220px; margin: 16px 16px 0; padding: 14px; }
   .project-card-image-wrap { min-height: 210px; margin: 16px 16px 0; }
   .project-card-showcase {
@@ -419,7 +516,24 @@
   .project-card-showcase-label { font-size: 0.52rem; }
   .project-card-body,
   .project-card-featured .project-card-body,
-  .project-card-wide .project-card-body { padding: 18px 16px 20px; }
+  .project-card-wide .project-card-body {
+    gap: 14px;
+    padding: 18px 16px 20px;
+  }
   .project-card-topline { align-items: flex-start; flex-direction: column; }
-  .project-card-button { width: 100%; }
+  .project-card-title { font-size: 1.42rem; }
+  .project-card-outcome { padding: 12px; }
+  .project-card-outcome p { font-size: 0.86rem; }
+  .project-card-tech-tag:nth-child(n + 6) {
+    display: none;
+  }
+  .project-card-footer {
+    align-items: stretch;
+    flex-direction: column;
+    margin-top: 8px;
+  }
+  .project-card-button {
+    width: 100%;
+    min-height: 48px;
+  }
 }
