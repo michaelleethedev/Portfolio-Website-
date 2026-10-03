@@ -24,7 +24,7 @@ const ProjectCard = ({ project, onDemo }) => {
     <article
       id={`project-${project.slug}`}
       data-project-slug={project.slug}
-      className={`project-card ${project.featured ? 'project-card-featured' : ''} ${project.wide ? 'project-card-wide' : ''}`}
+      className={`project-card project-card-${project.slug} ${project.featured ? 'project-card-featured' : ''}`}
       onClick={openCaseStudy}
       onKeyDown={handleCardKeyDown}
       role="link"
@@ -91,27 +91,16 @@ const ProjectCard = ({ project, onDemo }) => {
 
       <div className="project-card-body">
         <div className="project-card-topline">
-          <span className="project-card-status">{project.status}</span>
+          <span className="project-card-status">{project.slug === 'seamless' ? 'Published extension' : 'Product demo'}</span>
           <span className="project-card-availability">{project.availability}</span>
         </div>
 
         <div>
-          <p className="project-card-subtitle">{project.subtitle}</p>
           <h3 className="project-card-title">{project.title}</h3>
+          <p className="project-card-subtitle">{project.subtitle}</p>
         </div>
 
-        <div className="project-card-outcome">
-          <span>Outcome</span>
-          <p>{project.why || project.summary}</p>
-        </div>
-
-        <div className="project-card-badges" aria-label={`${project.title} badges`}>
-          {project.badges.map((badge) => (
-            <span key={badge}>{badge}</span>
-          ))}
-        </div>
-
-        <div className="project-card-section-label">Workflow highlights</div>
+        <p className="project-card-summary">{project.summary}</p>
         <ul className="project-card-highlights" aria-label={`${project.title} highlights`}>
           {project.highlights.map((highlight) => (
             <li key={highlight}>
@@ -123,7 +112,6 @@ const ProjectCard = ({ project, onDemo }) => {
           ))}
         </ul>
 
-        <div className="project-card-section-label">Built with</div>
         <div className="project-card-tech" aria-label={`${project.title} technology stack`}>
           {project.tech.map((tech) => (
             <span key={tech} className="project-card-tech-tag">{tech}</span>
@@ -131,7 +119,6 @@ const ProjectCard = ({ project, onDemo }) => {
         </div>
 
         <div className="project-card-footer">
-          <p className="project-card-privacy">{project.privacy}</p>
           {project.liveDemo?.href ? (
             <a
               href={project.liveDemo.href}
@@ -140,7 +127,7 @@ const ProjectCard = ({ project, onDemo }) => {
               className="project-card-button project-card-button-live"
               onClick={stopCardClick}
             >
-              {project.liveDemo.label}
+              {project.liveDemo.label === 'Live Demo' ? 'Explore demo' : project.liveDemo.label}
               {project.liveDemo.external && <span aria-hidden="true">↗</span>}
             </a>
           ) : project.liveDemo?.modal ? (
@@ -152,7 +139,7 @@ const ProjectCard = ({ project, onDemo }) => {
                 onDemo();
               }}
             >
-              {project.liveDemo.label}
+              Preview project
             </button>
           ) : null}
           {project.github?.href ? (
@@ -166,17 +153,18 @@ const ProjectCard = ({ project, onDemo }) => {
               {project.github.label}
               {project.github.external && <span aria-hidden="true">↗</span>}
             </a>
-          ) : (
-            <span className="project-card-button project-card-button-disabled" aria-disabled="true">
-              GitHub soon
-            </span>
+          ) : null}
+          {project.store && (
+            <a href={project.store.href} target="_blank" rel="noopener noreferrer" className="project-card-button project-card-button-source" onClick={stopCardClick}>
+              Chrome Store <span aria-hidden="true">↗</span>
+            </a>
           )}
           <a
             href={caseStudyHref}
             className="project-card-button project-card-button-primary"
             onClick={stopCardClick}
           >
-            Case Study
+            Case study <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

@@ -3,10 +3,10 @@ import './CredibilityStrip.css';
 
 const CredibilityStrip = () => {
   const items = [
-    { value: 'AI', label: 'Observability dashboard' },
+    { value: 'IT', label: 'Support incident workflow' },
     { value: 'Chrome', label: 'Published extension' },
     { value: 'EdTech', label: 'Learning analytics SaaS' },
-    { value: 'Safe demos', label: 'Mock and local data only' }
+    { value: 'Hospitality', label: 'Guest & staff operations' }
   ];
 
   return (

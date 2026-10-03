@@ -79,7 +79,7 @@ const ProjectDetail = ({ project, onBack, onOpenDemo }) => {
             <p>{project.description}</p>
             <div className="project-detail-actions">
               {liveButton}
-              <a
+              {project.github?.href && <a
                 href={project.github.href}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -87,11 +87,15 @@ const ProjectDetail = ({ project, onBack, onOpenDemo }) => {
               >
                 GitHub
                 <span aria-hidden="true">↗</span>
-              </a>
+              </a>}
+              {project.store && <a href={project.store.href} target="_blank" rel="noopener noreferrer" className="project-detail-button project-detail-button-secondary">Chrome Store ↗</a>}
               <button type="button" className="project-detail-button project-detail-button-ghost" onClick={goToContact}>
                 Contact
               </button>
             </div>
+            {project.liveDemo?.routes && <div className="project-detail-actions" aria-label={`${project.title} demo workflows`}>
+              {project.liveDemo.routes.slice(1).map(route => <a key={route.label} href={route.href} target="_blank" rel="noopener noreferrer" className="project-detail-button project-detail-button-ghost">{route.label} ↗</a>)}
+            </div>}
           </div>
           <ProjectPreview project={project} />
         </div>
@@ -121,7 +125,7 @@ const ProjectDetail = ({ project, onBack, onOpenDemo }) => {
         <div className="container">
           <div className="project-detail-section-heading">
             <span className="project-detail-label">Key features</span>
-            <h2>What recruiters can evaluate quickly</h2>
+            <h2>Inside the workflow</h2>
           </div>
           <div className="project-detail-feature-grid">
             {project.features.map((feature) => (
@@ -140,7 +144,7 @@ const ProjectDetail = ({ project, onBack, onOpenDemo }) => {
             <span className="project-detail-label">Preview</span>
             <h2>Screenshots and interaction model</h2>
             <p>
-              The preview focuses on the main workflow instead of decorative UI. Where real screenshots are available, they appear directly; otherwise the page uses a structured preview panel until final assets are added.
+              {project.privacy} Open the demo to try the workflow and see how the interface responds.
             </p>
           </article>
           <ProjectPreview project={project} />

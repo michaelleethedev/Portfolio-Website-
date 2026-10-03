@@ -1,0 +1,74 @@
+.demo-page { padding: 130px 0 75px; }
+.demo-back { display: inline-block; margin-bottom: 28px; color: #9cb5d9; font-size: .85rem; }
+.demo-page-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+.demo-page-header h1 { margin: 10px 0 12px; font-size: clamp(2.3rem, 5vw, 3.8rem); letter-spacing: -.04em; }
+.demo-page-header p { max-width: 660px; font-size: .95rem; }
+.demo-eyebrow { color: #8cbfff; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.demo-disclosure { padding: 14px 18px; margin-bottom: 22px; border: 1px solid #26384f; border-radius: 10px; background: #101c2a; color: #b7c8df; font-size: .8rem; }
+.demo-app { border: 1px solid #28354a; border-radius: 18px; padding: 24px; background: #080e18; }
+.demo-app-toolbar, .demo-action-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.demo-app-toolbar { justify-content: space-between; gap: 16px; }
+.demo-primary, .demo-secondary, .demo-view-switch button, .demo-folder-tabs button { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 10px 14px; border-radius: 8px; font-size: .78rem; font-weight: 650; line-height: 1.4; }
+.demo-primary { background: #8bbcff; color: #071426; border: 1px solid #8bbcff; }
+.demo-secondary { border: 1px solid #34445c; background: #121d2d; color: #d8e3f4; }
+.demo-view-switch, .demo-folder-tabs { display: flex; flex-wrap: wrap; gap: 7px; }
+.demo-view-switch button, .demo-folder-tabs button { border: 1px solid #29384d; color: #a7b7cd; background: #0e1825; }
+.demo-view-switch button[aria-pressed='true'], .demo-folder-tabs button[aria-pressed='true'] { background: #203a5f; border-color: #709fda; color: #eef5ff; }
+.demo-app button:disabled { cursor: not-allowed; opacity: .4; }
+.demo-app button:not(:disabled):hover { filter: brightness(1.18); }
+.demo-page button:focus-visible, .demo-page a:focus-visible, .demo-page input:focus-visible, .demo-page textarea:focus-visible { outline: 2px solid #8bbcff; outline-offset: 3px; }
+.demo-announcement { min-height: 28px; margin: 20px 0; color: #accdf9; font-size: .85rem; }
+.demo-storage-note { margin-top: 16px; color: #efc879; font-size: .8rem; }
+.demo-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 22px; }
+.demo-metrics > div { padding: 16px; background: #101b2a; border: 1px solid #26344a; border-radius: 10px; }
+.demo-metrics span { display: block; color: #97a9c1; font-size: .73rem; margin-bottom: 8px; }
+.demo-metrics strong { font-size: 1rem; }
+.demo-success { color: #81dec0; }
+.demo-work-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 22px; }
+.demo-panel { padding: 25px; background: #0f1826; border: 1px solid #253449; border-radius: 12px; min-width: 0; }
+.demo-panel h2 { font-size: 1.25rem; margin: 12px 0; letter-spacing: -.02em; }
+.demo-panel h3 { font-size: 1rem; margin-top: 28px; }
+.demo-panel p { font-size: .82rem; }
+.demo-panel-heading { display: flex; justify-content: space-between; gap: 10px; color: #8fa4c0; font-size: .72rem; }
+.demo-priority { color: #f8b6a9; }
+.demo-context { margin: 20px 0; }
+.demo-checklist { display: grid; gap: 22px; margin: 28px 0; list-style: none; padding: 0; }
+.demo-checklist li { display: flex; gap: 14px; }
+.demo-checklist strong { font-size: .88rem; }
+.demo-step { flex: 0 0 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: #202d41; color: #a3b7d6; font-size: .8rem; }
+.demo-step.done { background: #193d38; color: #83e1c3; }
+.demo-resolution { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; margin-top: 26px; padding-top: 20px; border-top: 1px solid #2b3b52; }
+.demo-note-form, .demo-field { display: grid; gap: 9px; margin-top: 22px; font-size: .8rem; color: #b4c6df; }
+.demo-page input, .demo-page textarea { width: 100%; min-width: 0; border: 1px solid #3a4c65; border-radius: 8px; padding: 12px; color: #e3ebf7; background: #080f1c; font: inherit; line-height: 1.5; }
+.demo-page textarea { resize: vertical; }
+.demo-page input::placeholder, .demo-page textarea::placeholder { color: #8396b2; }
+.demo-timeline { margin: 22px 0; display: grid; gap: 12px; list-style: none; padding: 0; }
+.demo-timeline li { padding: 13px 16px; border-left: 2px solid #639bdd; background: #101e30; color: #c0cee2; font-size: .82rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+.demo-employee { max-width: 800px; margin: 0 auto; }
+.seamless-demo .demo-work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.demo-folder-tabs { margin: 20px 0; }
+.demo-folder-tabs button { min-height: 36px; padding: 7px 10px; font-size: .72rem; }
+.demo-template-list { display: grid; gap: 12px; }
+.demo-template { display: flex; border: 1px solid #293b52; border-radius: 10px; background: #0c1522; overflow: hidden; }
+.demo-template.selected { border-color: #80cdb4; background: #102722; }
+.demo-template-select { display: grid; gap: 7px; text-align: left; background: transparent; color: #e3ecf7; padding: 16px; flex: 1; min-width: 0; }
+.demo-template-select span { color: #86cdb6; font-size: .65rem; text-transform: uppercase; letter-spacing: .08em; }
+.demo-template-select strong { font-size: .86rem; }
+.demo-template-select p { font-size: .75rem; color: #9fb2c7; }
+.demo-favorite { align-self: flex-start; padding: 12px; min-height: 44px; min-width: 44px; background: transparent; color: #f1d48e; font-size: 1.3rem; }
+.demo-variable-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.demo-template-preview { font: inherit; font-size: .86rem; line-height: 1.8; color: #c9e6db; white-space: pre-wrap; overflow-wrap: anywhere; padding: 20px; border: 1px solid #2b5147; border-radius: 10px; background: #0b201b; margin: 24px 0; min-height: 175px; }
+.demo-draft { margin-bottom: 12px; }
+.demo-character-count { color: #9aacc5; font-size: .7rem; }
+.demo-empty { padding: 24px 0; }
+.demo-empty p { margin-bottom: 15px; }
+@media (max-width: 900px) { .demo-work-grid, .seamless-demo .demo-work-grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) {
+  .demo-page { padding-top: 100px; }
+  .demo-page-header { align-items: flex-start; flex-direction: column; }
+  .demo-app { padding: 16px; border-radius: 12px; }
+  .demo-panel { padding: 18px; }
+  .demo-metrics { grid-template-columns: 1fr 1fr; }
+  .demo-metrics > div { padding: 12px; }
+  .demo-variable-fields { grid-template-columns: 1fr; gap: 0; }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import CredibilityStrip from './components/CredibilityStrip';
@@ -13,6 +13,8 @@ import RecruiterCTA from './components/RecruiterCTA';
 import { getProjectBySlug } from './data/projects';
 import './App.css';
 
+const DemoWorkspace = lazy(() => import('./components/DemoWorkspace'));
+
 function App() {
   const [hash, setHash] = useState(window.location.hash);
   const [activeDemoProject, setActiveDemoProject] = useState(null);
@@ -21,7 +23,7 @@ function App() {
     const handleHashChange = () => {
       const nextHash = window.location.hash;
       setHash(nextHash);
-      if (nextHash.startsWith('#/projects/')) {
+      if (nextHash.startsWith('#/projects/') || nextHash.startsWith('#/demos/')) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
@@ -34,6 +36,18 @@ function App() {
     const match = hash.match(/^#\/projects\/([a-z0-9-]+)$/);
     return match ? getProjectBySlug(match[1]) : null;
   }, [hash]);
+
+  const demoMatch = hash.match(/^#\/demos\/(resolveit|seamless)$/);
+  const demoProject = demoMatch ? getProjectBySlug(demoMatch[1]) : null;
+
+  useEffect(() => {
+    document.title = activeProject || demoProject
+      ? `${(activeProject || demoProject).title} | Michael Lee`
+      : 'Michael Lee - Full-Stack Software Developer';
+    if (!activeProject && !demoProject && /^#[a-z]+$/.test(hash)) {
+      document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [hash, activeProject, demoProject]);
 
   useEffect(() => {
     if (activeProject) {
@@ -51,7 +65,11 @@ function App() {
   return (
     <div className="app">
       <Navbar />
-      {activeProject ? (
+      {demoProject ? (
+        <Suspense fallback={<main className="container" style={{ paddingTop: 130 }}><p role="status">Loading demo…</p></main>}>
+          <DemoWorkspace key={demoProject.slug} project={demoProject} />
+        </Suspense>
+      ) : activeProject ? (
         <ProjectDetail
           project={activeProject}
           onBack={goHome}
@@ -67,7 +85,7 @@ function App() {
           <Contact />
         </main>
       )}
-      <RecruiterCTA />
+      {!demoProject && <RecruiterCTA />}
       {activeDemoProject && (
         <ProjectDemoModal
           project={activeDemoProject}

@@ -71,3 +71,8 @@
     display: none;
   }
 }
+/* Keep mobile contact actions in one row so they obscure less of the work. */
+@media (max-width: 720px) {
+  .recruiter-cta { display: flex; width: auto; }
+  .recruiter-cta .recruiter-cta-secondary { display: none; }
+}

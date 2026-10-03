@@ -1,6 +1,6 @@
-# Saleem - Software Developer Portfolio
+# Michael Lee - Software Developer Portfolio
 
-A premium, professional portfolio website designed to showcase real-world software development skills and position Saleem as a credible developer for software engineering and IT roles.
+A portfolio with working demos for IT support, hospitality operations, tutoring workflows, and reusable writing templates.
 
 ## 🎯 Purpose
 
@@ -113,15 +113,24 @@ npm run preview
 
 ### Connect Live Project Demos
 
-Some projects can point to external live demos when deployed. Add any available URLs to `.env.local`:
+RallyTab and SkillBridge AI point to their verified Vercel deployments by default. ResolveIT and Seamless have runnable web demos on GitHub Pages:
+
+- `#/demos/resolveit`: diagnostics, remote-action simulation, resolution gating, technician notes, and employee updates.
+- `#/demos/seamless`: template search, folder filters, favorites, variable filling, and draft insertion.
+
+Both embedded demos save only local browser state, support reset, and remain usable if browser storage is unavailable. Seamless also links to its Chrome Web Store listing.
+
+Optional deployment overrides belong in `.env.local`:
 
 ```bash
 VITE_RALLYTAB_DEMO_URL=https://rally-tab.vercel.app
 VITE_RESOLVEIT_DEMO_URL=
-VITE_SKILLBRIDGE_DEMO_URL=
+VITE_SKILLBRIDGE_DEMO_URL=https://skillbridge-ai-cyan.vercel.app
 ```
 
-The portfolio will automatically use real live demo links when a URL is present. If a demo URL is not set, the project card still opens the built-in interactive portfolio preview.
+ResolveIT's external deployment must expose `/workspace` and `/employee`. With no override, its card opens the embedded support workflow. GitHub Pages builds do not depend on a developer's untracked `.env` file.
+
+Pushing `main` runs `.github/workflows/deploy-pages.yml`, builds the site, and publishes it to https://michaelleethedev.github.io/Portfolio-Website-/.
 
 ## 📋 Featured Projects
 

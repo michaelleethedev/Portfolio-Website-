@@ -8,6 +8,7 @@ const Projects = () => {
   const [activeDemoProject, setActiveDemoProject] = useState(null);
   const [activeProjectSlug, setActiveProjectSlug] = useState(projects[0]?.slug);
 
+
   useEffect(() => {
     const projectCards = projects
       .map((project) => document.getElementById(`project-${project.slug}`))
@@ -47,21 +48,11 @@ const Projects = () => {
     <section id="projects" className="section projects">
       <div className="container">
         <div className="projects-header">
-          <span className="projects-kicker">Featured Projects</span>
-          <h2 className="section-title">Interactive builds recruiters can open fast</h2>
+          <span className="projects-kicker">Selected work / 01 — 04</span>
+          <h2 className="section-title">Built around real problems.</h2>
           <p className="section-subtitle">
-            ResolveIT, RallyTab, and SkillBridge AI lead the portfolio, with Seamless included as a live Chrome extension. Each card gives a quick path to a demo, repo, and case study.
+            From resolving IT incidents to keeping a busy kitchen moving. Explore the interfaces, try the workflows, and see how I built them.
           </p>
-        </div>
-
-        <div className="project-lab-callout">
-          <div>
-            <span>Recruiter flow</span>
-            <strong>Scan the cards, open a live workflow, then jump into the case study for build decisions.</strong>
-          </div>
-          <button type="button" onClick={() => setActiveDemoProject(projects[0])}>
-            Try ResolveIT demo
-          </button>
         </div>
 
         <div className="projects-mobile-switcher" aria-label="Jump to featured project">
@@ -81,16 +72,16 @@ const Projects = () => {
 
         <div className="projects-grid">
           {projects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              onDemo={() => setActiveDemoProject(project)}
-            />
-          ))}
+              <ProjectCard
+                key={project.title}
+                project={project}
+                onDemo={() => setActiveDemoProject(project)}
+              />
+            ))}
         </div>
 
         <p className="projects-note">
-          Public demos and repositories are linked when available. Private source stays private while it is prepared for portfolio review.
+          Application demos use fictional data. Seamless is available on the Chrome Web Store.
         </p>
       </div>
 

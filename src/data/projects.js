@@ -1,8 +1,8 @@
 const assetBase = import.meta.env.BASE_URL;
 
 const rallyTabDemoBase = (import.meta.env.VITE_RALLYTAB_DEMO_URL || 'https://rally-tab.vercel.app').replace(/\/$/, '');
-const resolveITDemoUrl = import.meta.env.VITE_RESOLVEIT_DEMO_URL || '';
-const skillBridgeDemoUrl = import.meta.env.VITE_SKILLBRIDGE_DEMO_URL || '';
+const resolveITDemoUrl = (import.meta.env.VITE_RESOLVEIT_DEMO_URL || '').replace(/\/$/, '');
+const skillBridgeDemoUrl = (import.meta.env.VITE_SKILLBRIDGE_DEMO_URL || 'https://skillbridge-ai-cyan.vercel.app').replace(/\/$/, '');
 
 export const projects = [
   {
@@ -11,7 +11,7 @@ export const projects = [
     subtitle: 'Interactive IT support operations demo',
     shortTitle: 'ResolveIT: Interactive IT Support Operations Demo',
     status: 'Featured project',
-    availability: resolveITDemoUrl ? 'Live demo' : 'Interactive portfolio demo',
+    availability: resolveITDemoUrl ? 'Live demo' : 'Try the support workflow',
     summary: 'Interactive IT support operations demo built with Next.js, TypeScript, and Tailwind CSS. Simulates technician workflows, device diagnostics, ticket resolution, and employee-facing support updates across desktop and mobile.',
     description: 'ResolveIT is a responsive portfolio project that simulates a modern IT support operations workflow. It includes a technician workspace, employee self-service portal, ticket queue, device inventory, guided VPN diagnostics, resolution checklist, internal notes, public updates, and shared local state between technician and employee views.',
     why: 'I built ResolveIT to show product thinking beyond a static dashboard. The demo lets someone walk through a realistic critical VPN incident, take technician actions, resolve the ticket, and verify the result from the employee-facing portal.',
@@ -62,15 +62,19 @@ export const projects = [
     },
     liveDemo: resolveITDemoUrl ? {
       label: 'Live Demo',
-      href: resolveITDemoUrl,
-      external: true
+      href: `${resolveITDemoUrl}/workspace`,
+      external: true,
+      routes: [
+        { label: 'Technician View', href: `${resolveITDemoUrl}/workspace` },
+        { label: 'Employee Portal', href: `${resolveITDemoUrl}/employee` }
+      ]
     } : {
-      label: 'Live Demo',
-      modal: true
+      label: 'Try demo',
+      href: '#/demos/resolveit'
     },
     github: {
       label: 'GitHub',
-      href: 'https://github.com/michaelleethedev/ResolveIT',
+      href: 'https://github.com/michaelleethedev/Resolve-IT',
       external: true
     },
     next: [
@@ -189,8 +193,13 @@ export const projects = [
     },
     liveDemo: skillBridgeDemoUrl ? {
       label: 'Live Demo',
-      href: skillBridgeDemoUrl,
-      external: true
+      href: `${skillBridgeDemoUrl}/demo`,
+      external: true,
+      routes: [
+        { label: 'Demo Hub', href: `${skillBridgeDemoUrl}/demo` },
+        { label: 'Student Workspace', href: `${skillBridgeDemoUrl}/students/stu-bruce?tour=1` },
+        { label: 'Practice Plans', href: `${skillBridgeDemoUrl}/practice-plans` }
+      ]
     } : {
       label: 'Live Demo',
       modal: true
@@ -213,7 +222,7 @@ export const projects = [
     subtitle: 'Browser productivity extension',
     shortTitle: 'Seamless: Chrome Extension for Reusable Writing Templates',
     status: 'Real-world product',
-    availability: 'Live on the Chrome Web Store',
+    availability: 'Web demo + Chrome extension',
     summary: 'A Chrome extension for organizing, searching, favoriting, and inserting reusable writing templates without leaving the browser.',
     description: 'Seamless is a Chrome extension that helps people save reusable writing templates, organize them by folder, search quickly, and insert snippets while working in the browser.',
     why: 'I built Seamless because repeated writing is a real productivity problem. This project let me focus on a tight browser workflow, privacy-conscious local storage, and a product that can actually be installed.',
@@ -243,15 +252,15 @@ export const projects = [
       items: ['Search Templates', 'Favorite Reply', 'Insert Snippet', 'Local Storage']
     },
     liveDemo: {
+      label: 'Try demo',
+      href: '#/demos/seamless'
+    },
+    store: {
       label: 'Chrome Store',
       href: 'https://chromewebstore.google.com/detail/seamless/phipkfflgldgfdmgenobpklmlnpekgph?hl=en',
       external: true
     },
-    github: {
-      label: 'GitHub',
-      href: 'https://github.com/michaelleethedev/Seamless',
-      external: true
-    },
+    github: null,
     next: [
       'Add optional cloud sync while keeping local-first defaults',
       'Improve onboarding for first-time extension users',
